@@ -45,7 +45,7 @@
 #### Laravel環境構築
 
 - docker compose exec php composer install
-- cp .env.example .env
+- cp src/.env.example src/.env
 
 ※DB接続のため、.envを以下に修正してください
 
@@ -92,6 +92,19 @@ Nodeモジュールをインストール
 本番環境ビルド
 
 - docker compose exec node npm run build
+
+## トラブルシューティング
+
+### storage / bootstrap/cache の権限エラーが発生する場合
+
+以下を実行してください。
+
+- docker compose exec php chmod -R 775 /var/www/storage
+- docker compose exec php chmod -R 775 /var/www/bootstrap/cache
+- docker compose exec php chown -R www-data:www-data /var/www/storage
+- docker compose exec php chown -R www-data:www-data /var/www/bootstrap/cache
+- docker compose exec php php artisan optimize:clear
+- docker compose restart
 
 ## 外部サービス
 
