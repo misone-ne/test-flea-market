@@ -129,7 +129,7 @@ class PurchaseController extends Controller
 
             'mode' => 'payment',
 
-            'success_url' => route('purchase.show', ['item_id' => $item->id]),
+            'success_url' => route('index'),
             'cancel_url' => route('purchase.show', ['item_id' => $item->id]),
         ]);
 
