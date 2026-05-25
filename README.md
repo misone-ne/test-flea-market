@@ -105,6 +105,7 @@ Nodeモジュールをインストール
 - docker compose exec php chown -R www-data:www-data /var/www/bootstrap/cache
 - docker compose exec php php artisan optimize:clear
 - docker compose restart
+- docker compose exec node npm run dev
 
 ## 外部サービス
 
