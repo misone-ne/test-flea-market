@@ -5,28 +5,29 @@
 @section('content')
     <div class="product-list">
         <div class="product-list__tabs">
-            {{-- おすすめ：タブパラメータが空のときactive --}}
-            <a href="/" class="product-list__tab product-list__tab-recs {{ !request()->query('tab') ? 'is-active' : '' }}">おすすめ</a>
-            {{-- マイリスト：タブパラメータがmylistのときactive --}}
-            <a href="/?tab=mylist" class="product-list__tab product-list__tab-mylist {{ request()->query('tab') === 'mylist' ? 'is-active' : '' }}">マイリスト</a>
+            {{-- おすすめ：recommendタブのときactive --}}
+            <a href="{{ route('index', ['keyword' => $keyword]) }}" class="product-list__tab product-list__tab-recs {{ $tab === 'recommend' ? 'is-active' : '' }}">おすすめ</a>
+            {{-- マイリスト：mylistタブのときactive --}}
+            <a href="{{ route('index', ['tab' => 'mylist', 'keyword' => $keyword]) }}" class="product-list__tab product-list__tab-mylist {{ $tab === 'mylist' ? 'is-active' : '' }}">マイリスト</a>
         </div>
 
-        {{-- 商品一覧 --}}
-        <div class="produt-list__grid">
+        <div class="product-list__grid">
             @forelse ($items as $item)
             <div class="product-card">
-                <a href="{{ route('item.show' , ['item_id' => $item->id]) }}" class="product-card__link">
+                <a href="{{ route('item.show', ['item_id' => $item->id]) }}" class="product-card__link">
                     <div class="product-card__image-wrapper">
-                        <img src="{{ $item->image_path }}" alt="{{ $item->name }}" class="product-card__image">
+                        <img src="{{ Storage::url($item->image_path) }}" alt="{{ $item->name }}" class="product-card__image">
                         @if ($item->is_sold)
-                            <span class="product-card__sold">Sold</span>
+                            <span class="product-card__sold-label">Sold</span>
                         @endif
                     </div>
                     <p class="product-card__name">{{ $item->name }}</p>
                 </a>
             </div>
             @empty
-                <p class="product-list__none">表示する商品がありません。</p>
+            <div class="product-list__none">
+            </div>
             @endforelse
         </div>
+    </div>
 @endsection

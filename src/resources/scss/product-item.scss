@@ -1,0 +1,226 @@
+.product-detail {
+    padding: 100px 60px;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    // 画像
+    &__image-wrapper {
+        position: relative;
+        flex: 1;
+        max-width: 600px;
+        margin-top: 30px;
+    }
+    
+    // 情報（画面右側）
+    &__content {
+        flex: 1;
+    }
+
+    &__name {
+        font-size: 45px;
+        font-weight: 700;
+    }
+
+    &__brand {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    &__price {
+        font-size: 45px;
+        font-weight: 400;
+        align-items: baseline;
+        margin-bottom: 20px;
+
+        .product-detail__currency {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .product-detail__tax {
+            font-size: 30px;
+            font-weight: 400;
+        }
+    }
+
+    // いいね・コメントアイコン
+     &__stats {
+        display: flex;
+        gap: 60px;
+        margin-left: 30px;
+    }
+
+    &__stats-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content; 
+
+        .product-detail__icon {
+            display: block;
+            width: 45px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .product-detail__count {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            justify-content: baseline;
+        }
+
+        .product-detail__icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+
+    // 購入ボタン
+    &__buy-btn {
+        display: block;
+        width: 100%;
+        background-color: #FF5555;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 4px;
+        font-size: 30px;
+        font-weight: 700;
+        text-decoration: none;
+        margin: 20px 0;
+    }
+
+    // セクションタイトル
+    &__section {
+        margin-bottom: 40px;
+
+        &-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+    }
+
+    // 商品説明
+     &__description {
+        font-size: 24px;
+        font-weight: 400;
+        white-space: pre-wrap;
+    }
+
+    // 商品の情報
+     &__info-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+     &__info-label {
+        width: 150px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &__tag {
+        display: inline-block;
+        white-space: nowrap;
+        background-color: #E0E0E0;
+        padding: 4px 15px;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 3px;
+    }
+
+    &__info-value {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    // コメント
+    &__comment-title {
+        color: #5F5F5F;
+    }
+
+    &__comment-user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    &__user-icon {
+        width: 70px;
+        height: 70px;
+        background-color: #D9D9D9;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__user-icon-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+     &__user-name {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    &__comment-body {
+        font-size: 20px;
+        font-weight: 300;
+        background-color: #F7F7F7;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    &__comment-label {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__comment-textarea {
+        width: 100%;
+        height: 250px;
+        border: 2px solid #5F5F5F;
+        border-radius: 5px;
+        padding: 15px;
+    }
+
+    &__comment-btn {
+        width: 100%;
+        background-color: #ff5555;
+        color: #FFFFFF;
+        font-size: 25px;
+        font-weight: 700;
+        padding: 15px 0;
+        margin-top: 40px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &__error {
+        color: #FF0000;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}

@@ -18,11 +18,14 @@
 /public/storage
 /storage/*.key
 /storage/pail
+/bootstrap/cache/*.php
 /vendor
 _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
-/docker/mysql/data
-npm-debug.log
-yarn-error.log
+/docker/mysql/data/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+/coverage
