@@ -9,7 +9,7 @@
 
         <form action="{{ route('mypage.update') }}" method="post" enctype="multipart/form-data" class="l-form__form">
         @csrf
-            
+
             <div class="l-form__image-section">
                 <div class="l-form__image-preview">
                     @if($user->profile_image)

@@ -38,14 +38,14 @@
 
 #### Dockerビルド
 
-- git clone
-- cd test-flea-market
-- docker compose up -d --build
+- `git clone`
+- `cd test-flea-market`
+- `docker compose up -d --build`
 
 #### Laravel環境構築
 
-- docker compose exec php composer install
-- cp src/.env.example src/.env
+- `docker compose exec php composer install`
+- `cp src/.env.example src/.env`
 
 ※DB接続のため、.envを以下に修正してください
 
@@ -60,7 +60,7 @@ DB_PASSWORD=laravel_pass
 
 ※メール認証機能利用のため、.envに以下を追加してください
 
-```env
+```
 MAIL_MAILER=smtp
 MAIL_HOST=mailhog
 MAIL_PORT=1025
@@ -71,9 +71,9 @@ MAIL_FROM_ADDRESS=test@example.com
 MAIL_FROM_NAME="Flea Market"
 ```
 
-- docker compose exec php php artisan key:generate
-- docker compose exec php php artisan migrate:fresh --seed
-- docker compose exec php php artisan storage:link
+- `docker compose exec php php artisan key:generate`
+- `docker compose exec php php artisan migrate:fresh --seed`
+- `docker compose exec php php artisan storage:link`
 
 ### フロントエンド（Vite）
 
@@ -83,15 +83,15 @@ MAIL_FROM_NAME="Flea Market"
 
 Nodeモジュールをインストール
 
-- docker compose exec node npm install
+- `docker compose exec node npm install`
 
 開発環境起動
 
-- docker compose exec node npm run dev
+- `docker compose exec node npm run dev`
 
 本番環境ビルド
 
-- docker compose exec node npm run build
+- `docker compose exec node npm run build`
 
 ## トラブルシューティング
 
@@ -99,13 +99,13 @@ Nodeモジュールをインストール
 
 以下を実行してください。
 
-- docker compose exec php chmod -R 775 /var/www/storage
-- docker compose exec php chmod -R 775 /var/www/bootstrap/cache
-- docker compose exec php chown -R www-data:www-data /var/www/storage
-- docker compose exec php chown -R www-data:www-data /var/www/bootstrap/cache
-- docker compose exec php php artisan optimize:clear
-- docker compose restart
-- docker compose exec node npm run dev
+- `docker compose exec php chmod -R 775 /var/www/storage`
+- `docker compose exec php chmod -R 775 /var/www/bootstrap/cache`
+- `docker compose exec php chown -R www-data:www-data /var/www/storage`
+- `docker compose exec php chown -R www-data:www-data /var/www/bootstrap/cache`
+- `docker compose exec php php artisan optimize:clear`
+- `docker compose restart`
+- `docker compose exec node npm run dev`
 
 ## 外部サービス
 
@@ -212,7 +212,7 @@ PHPUnitを使用して機能テストを実施
 
 ### 実行コマンド
 
-- docker compose exec php php artisan test
+- `docker compose exec php php artisan test`
 
 ### 実行結果
 

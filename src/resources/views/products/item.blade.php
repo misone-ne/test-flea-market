@@ -5,7 +5,7 @@
 @section('content')
 <div class="product-detail">
     <div class="product-detail__container">
-        
+
         <div class="product-detail__image-wrapper">
             @if($item->is_sold)
             <div class="product-detail__sold-label">
@@ -20,7 +20,7 @@
                 <h2 class="product-detail__name">{{ $item->name }}</h2>
                 <p class="product-detail__brand">{{ $item->brand }}</p>
                 <p class="product-detail__price"><span class="product-detail__currency">￥</span>{{ number_format($item->price) }}<span class="product-detail__tax">（税込）</span></p>
-                
+
                 {{-- いいね・コメントアイコン --}}
                 <div class="product-detail__stats">
                     <div class="product-detail__stats-item">
@@ -78,7 +78,7 @@
             {{-- コメント --}}
             <div class="product-detail__comment-section">
                 <h3 class="product-detail__section-title product-detail__comment-title">コメント({{ $item->comments_count }})</h3>
-    
+
                 <div class="product-detail__comment-list">
                     @foreach($item->comments as $comment)
                     <div class="product-detail__comment-item">
