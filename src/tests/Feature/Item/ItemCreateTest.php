@@ -58,6 +58,6 @@ class ItemCreateTest extends TestCase
 
         $this->assertDatabaseHas('category_item', ['category_id' => $category->id,]);
 
-        Storage::disk('public')->assertExists('item_images/' . $image->hashName());
+        Storage::disk('public')->assertExists('upload_items/' . $image->hashName());
     }
 }
