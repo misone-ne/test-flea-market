@@ -39,7 +39,7 @@
 #### Dockerビルド
 
 ```
-git clone
+git clone git@github.com:misone-ne/test-flea-market.git
 cd test-flea-market
 docker compose up -d --build
 ```
