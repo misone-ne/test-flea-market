@@ -14,7 +14,7 @@ class ItemController extends Controller
 {
     /**
      * 商品一覧画面表示
-     * 
+     *
      * - keyword: 商品名検索
      * - tabパラメータで表示内容を切替
      * 　（recommend: おすすめ商品一覧 / mylist: いいね済商品一覧）
@@ -49,7 +49,7 @@ class ItemController extends Controller
 
     /**
      * 商品詳細画面表示
-     * 
+     *
      * - 商品情報 + リレーション（user / categories / comments.user）
      * - 件数取得（いいね数・コメント数）
      * - ログインユーザーの いいね 状態を判定し、UIを切り替えるために使用
@@ -71,7 +71,7 @@ class ItemController extends Controller
 
     /**
      * いいね トグル処理
-     * 
+     *
      * 中間テーブル（likes）を使用し、
      * ユーザーの状態に応じて attach / detach を切替
      */
@@ -91,7 +91,7 @@ class ItemController extends Controller
 
     /**
      * コメント投稿処理
-     * 
+     *
      * - ログインユーザーのみ投稿可能
      */
     public function storeComment(CommentRequest $request, int $item_id)
@@ -107,7 +107,7 @@ class ItemController extends Controller
 
     /**
      * 商品出品画面表示
-     * 
+     *
      * - カテゴリー一覧を取得してチェックボックス表示用に渡す
      */
     public function sell()
@@ -119,13 +119,13 @@ class ItemController extends Controller
 
     /**
      * 商品出品処理
-     * 
+     *
      * - 画像はstorage/publicに保存
      * - 商品登録後、カテゴリを中間テーブル（category_item）に紐付け
      */
     public function store(ExhibitionRequest $request)
     {
-        $imagePath = $request->file('image')->store('item_images', 'public');
+        $imagePath = $request->file('image')->store('upload_items', 'public');
 
         $item = Item::create([
             'user_id'     => Auth::id(),

@@ -62,7 +62,7 @@ DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
 
-※メール認証機能利用のため、.envに以下を追加してください
+※メール認証機能利用のため、.envを以下に修正してください
 
 ```
 MAIL_MAILER=smtp
@@ -103,16 +103,22 @@ Nodeモジュールをインストール
 
 ### storage / bootstrap/cache の権限エラーが発生する場合
 
+以下のようなエラーが表示される場合：
+
+```
+tempnam(): file created in the system's temporary directory
+```
+
 以下を実行してください。
 
 ```
-docker compose exec php chmod -R 775 /var/www/storage
-docker compose exec php chmod -R 775 /var/www/bootstrap/cache
 docker compose exec php chown -R www-data:www-data /var/www/storage
 docker compose exec php chown -R www-data:www-data /var/www/bootstrap/cache
+
+docker compose exec php chmod -R 775 /var/www/storage
+docker compose exec php chmod -R 775 /var/www/bootstrap/cache
+
 docker compose exec php php artisan optimize:clear
-docker compose restart
-docker compose exec node npm run dev
 ```
 
 ## 外部サービス
@@ -220,7 +226,7 @@ PHPUnitを使用して機能テストを実施
 
 ### 実行コマンド
 
-- `docker compose exec php php artisan test`
+`docker compose exec php php artisan test`
 
 ### 実行結果
 

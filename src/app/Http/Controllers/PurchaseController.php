@@ -15,7 +15,7 @@ class PurchaseController extends Controller
 {
     /**
      * 商品購入画面表示
-     * 
+     *
      * - 商品情報とログインユーザー情報を取得 → 商品購入画面の初期表示データとして使用
      */
     public function show(Request $request, int $item_id)
@@ -34,7 +34,7 @@ class PurchaseController extends Controller
 
     /**
      * 小計画面更新
-     * 
+     *
      * 支払い方法変更時に画面を再描画し、小計画面へ選択内容を反映
      * ※DB更新は行わず、画面表示のみ更新
      */
@@ -61,7 +61,7 @@ class PurchaseController extends Controller
 
     /**
      * 住所更新処理
-     * 
+     *
      * データを保存し、購入画面へ戻す
      */
     public function updateAddress(AddressRequest $request, int $item_id)
@@ -74,7 +74,7 @@ class PurchaseController extends Controller
 
     /**
      * 商品購入処理
-     * 
+     *
      * - 売切れ状態を確認（二重購入防止）
      * - 購入履歴を保存
      * - 商品を売却済へ更新
