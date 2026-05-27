@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
 
-    /** 
+    /**
      * 会員登録画面表示
-     * 
+     *
      * Fortifyの標準ルートではなく
      * FormRequestによるバリデーション設計を採用している為、
      * 明示的にViewを返す構成としている
@@ -25,7 +25,7 @@ class AuthController extends Controller
 
     /**
      * 会員登録処理
-     * 
+     *
      * - FortifyのCreatesNewUsersを利用してユーザー新規作成
      * - 登録直後にログイン状態へ切替、メール認証画面へ遷移
      */
@@ -48,7 +48,7 @@ class AuthController extends Controller
 
     /**
      * ログイン処理
-     * 
+     *
      * - 認証成功時、セッション再生成（セッション固定攻撃対策）
      * - メール未認証の場合はメール認証誘導画面へ
      */
@@ -73,7 +73,7 @@ class AuthController extends Controller
 
     /**
      * ログアウト処理
-     * 
+     *
      * - セッション無効化（なりすまし防止）
      * - CSRFトークン再生成（セキュリティ維持）
      */

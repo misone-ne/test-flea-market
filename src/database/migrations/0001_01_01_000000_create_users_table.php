@@ -22,6 +22,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+                ->comment('Laravel標準で自動生成されたRemember Me（ログイン保持）用トークン。現在は未使用のため保留');
             $table->timestamps();
         });
 
