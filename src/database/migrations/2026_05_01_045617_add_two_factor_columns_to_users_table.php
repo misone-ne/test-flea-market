@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->text('two_factor_secret')
                 ->after('password')
-                ->nullable();
+                ->nullable()
                 ->comment('将来的な2FA機能用としてFortifyにより自動生成されたが、現在は未使用のため保留');
 
             $table->text('two_factor_recovery_codes')
                 ->after('two_factor_secret')
-                ->nullable();
+                ->nullable()
                 ->comment('将来的な2FA機能用としてFortifyにより自動生成されたが、現在は未使用のため保留');
 
             $table->timestamp('two_factor_confirmed_at')
                 ->after('two_factor_recovery_codes')
-                ->nullable();
+                ->nullable()
                 ->comment('将来的な2FA機能用としてFortifyにより自動生成されたが、現在は未使用のため保留');
         });
     }
