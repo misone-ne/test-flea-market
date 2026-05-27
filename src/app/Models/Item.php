@@ -30,7 +30,7 @@ class Item extends Model
 
     /**
      * 商品状態コードを表示用テキストへ変換
-     * 
+     *
      * - conditionに保存されている数値を、CONDITION_LABELSから取得して表示用文字列へ変換する
      */
     public function getConditionTextAttribute()
@@ -40,7 +40,7 @@ class Item extends Model
 
     /**
      * 商品名キーワード検索
-     * 
+     *
      * - キーワード入力時のみ部分一致検索を適用
      */
     public function scopeKeywordSearch($query, ?string $keyword)

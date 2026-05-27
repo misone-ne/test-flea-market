@@ -20,7 +20,7 @@ class ProfileController extends Controller
 
     /**
      * プロフィール更新処理
-     * 
+     *
      * - 既存のプロフィール画像がある場合は削除して差し替え
      * - 画像とそれ以外のデータを分離して更新し安全性を確保
      */
@@ -47,7 +47,7 @@ class ProfileController extends Controller
 
     /**
      * プロフィール画面表示
-     * 
+     *
      * - pageパラメータで表示内容を切替
      * 　（sell: ログインユーザーが出品した商品 / buy: ログインユーザーが購入した商品）
      * - 購入履歴の取得は中間テーブル（purchase）を使用
